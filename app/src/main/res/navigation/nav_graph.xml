@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/firstScreen">
+
+    <fragment
+        android:id="@+id/firstScreen"
+        android:name="com.yz3ro.chatcraftmvvm.ui.FirstScreen"
+        android:label="FirstScreen" >
+        <action
+            android:id="@+id/action_firstScreen_to_enterName"
+            app:destination="@id/enterName" />
+    </fragment>
+    <fragment
+        android:id="@+id/enterName"
+        android:name="com.yz3ro.chatcraftmvvm.ui.EnterName"
+        android:label="EnterName" >
+        <action
+            android:id="@+id/action_enterName_to_enterNumber"
+            app:destination="@id/enterNumber" />
+        <action
+            android:id="@+id/action_enterName_to_firstScreen"
+            app:destination="@id/firstScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/enterNumber"
+        android:name="com.yz3ro.chatcraftmvvm.ui.auth.EnterNumber"
+        android:label="EnterNumber" >
+        <action
+            android:id="@+id/action_enterNumber_to_enterOtp"
+            app:destination="@id/enterOtp" />
+        <action
+            android:id="@+id/action_enterNumber_to_enterName"
+            app:destination="@id/enterName" />
+        <argument
+            android:name="verificationCode"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/enterOtp"
+        android:name="com.yz3ro.chatcraftmvvm.ui.auth.EnterOtp"
+        android:label="EnterOtp" >
+        <action
+            android:id="@+id/action_enterOtp_to_messages"
+            app:destination="@id/messages" />
+        <action
+            android:id="@+id/action_enterOtp_to_enterNumber"
+            app:destination="@id/enterNumber" />
+    </fragment>
+    <fragment
+        android:id="@+id/messages"
+        android:name="com.yz3ro.chatcraftmvvm.ui.messages.Messages"
+        android:label="Messages" >
+        <action
+            android:id="@+id/action_messages_to_contacts"
+            app:destination="@id/contacts" />
+        <action
+            android:id="@+id/action_messages_to_settings2"
+            app:destination="@id/settings" />
+        <action
+            android:id="@+id/action_messages_to_chat"
+            app:destination="@id/chat" />
+    </fragment>
+    <fragment
+        android:id="@+id/contacts"
+        android:name="com.yz3ro.chatcraftmvvm.ui.Contacts.Contacts"
+        android:label="fragment_contacts"
+        tools:layout="@layout/fragment_contacts" >
+        <action
+            android:id="@+id/action_contacts_to_settings2"
+            app:destination="@id/settings" />
+        <action
+            android:id="@+id/action_contacts_to_messages2"
+            app:destination="@id/messages" />
+        <action
+            android:id="@+id/action_contacts_to_addContact"
+            app:destination="@id/addContact" />
+    </fragment>
+    <fragment
+        android:id="@+id/settings"
+        android:name="com.yz3ro.chatcraftmvvm.ui.settings.Settings"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_settings2_to_contacts"
+            app:destination="@id/contacts" />
+        <action
+            android:id="@+id/action_settings2_to_messages"
+            app:destination="@id/messages" />
+        <action
+            android:id="@+id/action_settings_to_editProfile"
+            app:destination="@id/editProfile" />
+    </fragment>
+    <fragment
+        android:id="@+id/addContact"
+        android:name="com.yz3ro.chatcraftmvvm.ui.Contacts.AddContact"
+        android:label="AddContact" >
+        <action
+            android:id="@+id/action_addContact_to_contacts"
+            app:destination="@id/contacts" />
+        <action
+            android:id="@+id/action_addContact_to_chat"
+            app:destination="@id/chat" />
+    </fragment>
+    <fragment
+        android:id="@+id/chat"
+        android:name="com.yz3ro.chatcraftmvvm.ui.messages.chat.Chat"
+        android:label="Chat" >
+        <action
+            android:id="@+id/action_chat_to_messages"
+            app:destination="@id/messages" />
+    </fragment>
+    <fragment
+        android:id="@+id/editProfile"
+        android:name="com.yz3ro.chatcraftmvvm.ui.settings.edit.EditProfile"
+        android:label="fragment_edit_profile"
+        tools:layout="@layout/fragment_edit_profile" >
+        <action
+            android:id="@+id/action_editProfile_to_settings"
+            app:destination="@id/settings" />
+    </fragment>
+</navigation>
