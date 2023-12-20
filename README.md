@@ -14,7 +14,7 @@ ChatCraft is a simple chat application developed using the Kotlin programming la
 - **Firebase Firestore:** For real-time database
 - **Firebase Storage:** For storing media files
 
-  ## MVVM Architecture
+## MVVM Architecture
 
  Our application embraces the MVVM architecture, enhancing code readability and facilitating maintenance. MVVM stands for Model-View-ViewModel, separating the user interface (View) and application data (Model), and connecting them through the ViewModel.
 The MVVM architecture ensures modularity in the code, empowering developers to manage user interface design and business logic more effectively. The underlying MVVM architecture of ChatCraft enhances the overall performance and sustainability of the application.
