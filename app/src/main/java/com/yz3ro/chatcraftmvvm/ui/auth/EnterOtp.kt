@@ -25,7 +25,7 @@ class EnterOtp : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+
         binding = FragmentEnterOtpBinding.inflate(inflater, container, false)
         return binding?.root
     }
@@ -38,17 +38,16 @@ class EnterOtp : Fragment() {
         val sharedPreferences = requireActivity().getPreferences(Context.MODE_PRIVATE)
         val name = sharedPreferences.getString("name", "")
         binding?.imgbtnNext2?.setOnClickListener {
-            // EditText'ten doğrulama kodunu al
+
             val verificationCode = binding?.editText1?.text.toString()+binding?.editText2?.text.toString()+binding?.editText3?.text.toString()+binding?.editText4?.text.toString()+binding?.editText5?.text.toString()+binding?.editText6?.text.toString()
-            // Doğrulama kodunu AuthViewModel'da işle
+
             authViewModel.signInWithPhoneAuthCredential(verificationCode)
             authViewModel.isVerificationSuccessful.observe(viewLifecycleOwner) { isSuccessful ->
                 if (isSuccessful) {
                     firestoreViewModel.addUserToFirestore(name)
                     navController.navigate(R.id.action_enterOtp_to_messages)
                 } else {
-                    // Doğrulama başarısız ise gerekli işlemleri yapabilirsiniz
-                    // Örneğin, kullanıcıya hata mesajını göster
+
                 }
             }
         }

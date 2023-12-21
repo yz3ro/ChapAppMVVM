@@ -30,7 +30,7 @@ class Contacts : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+
         binding =FragmentContactsBinding .inflate(inflater, container, false)
         return binding?.root
     }
@@ -51,10 +51,10 @@ class Contacts : Fragment() {
         viewModel = ViewModelProvider(this, ContactsFactory(repository)).get(ContactsViewModel::class.java)
 
 
-        // Gözlemleme
+
         observeViewModel()
 
-        // Verileri getir
+
         viewModel.fetchUserList()
 
         binding?.addContact?.setOnClickListener {

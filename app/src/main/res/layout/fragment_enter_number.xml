@@ -47,7 +47,7 @@
             app:layout_constraintTop_toBottomOf="@id/cons1">
 
             <TextView
-                android:id="@+id/txtkod1"
+                android:id="@+id/txtcode1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_alignParentStart="true"
@@ -60,7 +60,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/txtkod2"
+                android:id="@+id/txtcode2"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_alignParentStart="true"
@@ -71,7 +71,7 @@
                 android:textSize="14sp"
                 android:textStyle="normal"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtkod1" />
+                app:layout_constraintTop_toBottomOf="@+id/txtcode1" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

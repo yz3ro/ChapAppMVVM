@@ -14,7 +14,7 @@
         android:layout_weight="0.4">
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/rehber_pp"
+            android:id="@+id/contacts_pp"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_alignParentStart="true"
@@ -26,10 +26,10 @@
             android:src="@drawable/bos_pp" />
 
         <TextView
-            android:id="@+id/textViewKisiAdi"
+            android:id="@+id/textViewPersonName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/textViewTelefon"
+            android:layout_above="@+id/textViewPersonNumber"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="103dp"
@@ -41,7 +41,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/textViewTelefon"
+            android:id="@+id/textViewPersonNumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"

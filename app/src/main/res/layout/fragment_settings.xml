@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/txt_ayarlar"
+            android:id="@+id/txt_settings"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -56,7 +56,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/pp_ad"
+            android:id="@+id/pp_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
@@ -73,7 +73,7 @@
             android:layout_marginTop="5dp"
             android:text="Your number"
             app:layout_constraintStart_toEndOf="@+id/SettingsPp"
-            app:layout_constraintTop_toBottomOf="@+id/pp_ad" />
+            app:layout_constraintTop_toBottomOf="@+id/pp_name" />
 
         <Button
             android:id="@+id/editProfile"
@@ -98,27 +98,27 @@
         app:layout_constraintTop_toBottomOf="@+id/cons2">
 
         <ImageButton
-            android:id="@+id/img_bildirim"
+            android:id="@+id/img_settings"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="#FFFF"
             android:onClick="onButtonClicked" />
 
         <ImageView
-            android:id="@+id/imgv_bildirim"
+            android:id="@+id/imgv_notfy"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="50dp"
             android:layout_marginTop="30dp"
-            android:layout_toStartOf="@+id/txt_bildirim"
+            android:layout_toStartOf="@+id/txt_notfy"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_bildirim" />
 
         <TextView
-            android:id="@+id/txt_bildirim"
+            android:id="@+id/txt_notfy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -127,7 +127,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="50dp"
             android:text="Notifications"
-            app:layout_constraintStart_toEndOf="@+id/imgv_bildirim"
+            app:layout_constraintStart_toEndOf="@+id/imgv_notfy"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -141,20 +141,20 @@
 
 
         <ImageView
-            android:id="@+id/imgv_yardim"
+            android:id="@+id/imgv_help"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="50dp"
             android:layout_marginTop="30dp"
-            android:layout_toStartOf="@+id/txt_yardim"
+            android:layout_toStartOf="@+id/txt_help"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_yardim" />
 
         <TextView
-            android:id="@+id/txt_yardim"
+            android:id="@+id/txt_help"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -163,7 +163,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="50dp"
             android:text="Help"
-            app:layout_constraintStart_toEndOf="@+id/imgv_yardim"
+            app:layout_constraintStart_toEndOf="@+id/imgv_help"
             app:layout_constraintTop_toBottomOf="@+id/view" />
 
         <View
@@ -192,20 +192,20 @@
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout9">
 
         <ImageView
-            android:id="@+id/imgv_cikis"
+            android:id="@+id/imgv_exit"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="50dp"
             android:layout_marginTop="30dp"
-            android:layout_toStartOf="@+id/txt_cikis"
+            android:layout_toStartOf="@+id/txt_exit"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_cikis" />
 
         <TextView
-            android:id="@+id/txt_cikis"
+            android:id="@+id/txt_exit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -215,7 +215,7 @@
             android:layout_marginTop="50dp"
             android:text="Exit"
             android:textColor="#DF4F5F"
-            app:layout_constraintStart_toEndOf="@+id/imgv_cikis"
+            app:layout_constraintStart_toEndOf="@+id/imgv_exit"
             app:layout_constraintTop_toBottomOf="@+id/view2" />
 
         <View

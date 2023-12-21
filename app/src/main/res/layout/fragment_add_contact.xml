@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
-            android:id="@+id/imgb_geri"
+            android:id="@+id/imgb_back"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginStart="20dp"
@@ -38,7 +38,7 @@
         app:layout_constraintTop_toBottomOf="@id/cons1">
 
         <TextView
-            android:id="@+id/txt_ayarlar2"
+            android:id="@+id/txt_settings"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -77,10 +77,10 @@
             app:ccp_showPhoneCode="true"
             app:ccp_textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextKisiAdi" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextName" />
 
         <EditText
-            android:id="@+id/editTextTelefon"
+            android:id="@+id/editTextPhone"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
@@ -95,10 +95,10 @@
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/countyCodePicker"
-            app:layout_constraintTop_toBottomOf="@id/editTextKisiAdi" />
+            app:layout_constraintTop_toBottomOf="@id/editTextName" />
 
         <EditText
-            android:id="@+id/editTextKisiAdi"
+            android:id="@+id/editTextName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
@@ -127,7 +127,7 @@
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout8">
 
         <Button
-            android:id="@+id/btnOnayla"
+            android:id="@+id/btnSave"
             android:layout_width="327dp"
             android:layout_height="59dp"
             android:layout_alignParentStart="true"

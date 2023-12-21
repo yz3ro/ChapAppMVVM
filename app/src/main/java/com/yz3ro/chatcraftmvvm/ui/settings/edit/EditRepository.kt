@@ -30,14 +30,14 @@ class EditRepository {
         val userDocRef = FirebaseFirestore.getInstance().collection("kullanicilar").document(userId ?: "")
         userDocRef.addSnapshotListener { snapshot, exception ->
             if (exception != null) {
-                // Hata durumu
+
                 return@addSnapshotListener
             }
 
-            // Firestore'dan çekilen belgeyi UserProfile nesnesine dönüştür
+
             val userProfile = snapshot?.toObject(Users::class.java)
 
-            // LiveData'ya güncellenmiş UserProfile'ı gönder
+
             userProfileLiveData.value = userProfile
         }
 
@@ -74,16 +74,16 @@ class EditRepository {
             val imageRef = storageReference.child(imagePath)
 
             try {
-                // Resmi Firebase Storage'a yükle
+
                 imageRef.putFile(selectedImageUri).await()
 
-                // Yükleme başarılı olduysa Firestore'dan profil fotoğrafının URL'sini al
+
                 val imageUrl = imageRef.downloadUrl.await().toString()
 
-                // Firestore'daki kullanıcının profil fotoğrafını güncelle
+
                 updateImageUrlInFirestore(imageUrl)
             } catch (e: Exception) {
-                // Hata durumu
+
                 throw e
             }
         }

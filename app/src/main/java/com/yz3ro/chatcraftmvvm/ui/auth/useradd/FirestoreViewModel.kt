@@ -9,10 +9,10 @@ class FirestoreViewModel(private val firestoreRepository: FirestoreRepository) :
     fun addUserToFirestore(name: String?) {
         val currentUser = auth.currentUser
         if (currentUser != null && name != null) {
-            val phoneNumber = currentUser.phoneNumber // Telefon numarasını alabilirsiniz
-            val uid = currentUser.uid // UID'yi alabilirsiniz
+            val phoneNumber = currentUser.phoneNumber
+            val uid = currentUser.uid
 
-            // FirestoreRepository kullanarak veriyi ekleyin
+
             if (phoneNumber != null) {
                 firestoreRepository.addUser(name, phoneNumber, uid)
             }

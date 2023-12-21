@@ -13,9 +13,9 @@ class AuthRepository {
         callbacks: PhoneAuthProvider.OnVerificationStateChangedCallbacks
     ) {
         val options = PhoneAuthOptions.newBuilder(auth)
-            .setPhoneNumber(phoneNumber) // Telefon numarasını ekleyin, uluslararası biçimde olmalıdır
-            .setTimeout(60L, java.util.concurrent.TimeUnit.SECONDS) // Zaman aşımı süresi
-            .setCallbacks(callbacks) // Doğrulama durumu geri çağırma
+            .setPhoneNumber(phoneNumber)
+            .setTimeout(60L, java.util.concurrent.TimeUnit.SECONDS)
+            .setCallbacks(callbacks)
             .build()
 
         PhoneAuthProvider.verifyPhoneNumber(options)

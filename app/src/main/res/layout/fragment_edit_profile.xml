@@ -50,10 +50,10 @@
             app:civ_border_width="3dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txt_ayarlar2" />
+            app:layout_constraintTop_toBottomOf="@+id/txt_settings" />
 
         <TextView
-            android:id="@+id/txt_ayarlar2"
+            android:id="@+id/txt_settings"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -75,7 +75,7 @@
         app:layout_constraintTop_toBottomOf="@id/cons2">
 
         <EditText
-            android:id="@+id/editTextKisiAdi"
+            android:id="@+id/editTextName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/edit_text2"
@@ -98,7 +98,7 @@
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout5">
 
         <Button
-            android:id="@+id/btnOnayla"
+            android:id="@+id/btnSave"
             android:layout_width="327dp"
             android:layout_height="59dp"
             android:text="SAVE"

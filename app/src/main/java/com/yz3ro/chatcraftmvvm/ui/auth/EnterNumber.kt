@@ -36,12 +36,12 @@ class EnterNumber : Fragment() {
             if (phoneNumber.isNotBlank()) {
                 authViewModel.startPhoneNumberVerification(phoneNumber)
             } else {
-                // Telefon numarası boşsa kullanıcıya bir hata mesajı gösterilebilir
+
             }
 
         }
         authViewModel.verificationCodeSent.observe(viewLifecycleOwner) { verificationId ->
-            // Doğrulama kodu gönderildiğinde EnterOtp fragment'ına geçiş yap
+
             navController.navigate(R.id.action_enterNumber_to_enterOtp)
         }
 

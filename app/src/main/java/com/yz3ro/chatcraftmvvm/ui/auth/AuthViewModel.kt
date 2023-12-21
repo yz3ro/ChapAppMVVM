@@ -32,33 +32,33 @@ class AuthViewModel : ViewModel() {
 
     private val verificationCallbacks = object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
         override fun onVerificationCompleted(p0: PhoneAuthCredential) {
-            // Otomatik doğrulama tamamlandığında burası çalışır
+
         }
 
         override fun onVerificationFailed(p0: FirebaseException) {
-            // Doğrulama başarısız olduğunda burası çalışır
+
         }
 
         override fun onCodeSent(
             verificationId: String,
             token: PhoneAuthProvider.ForceResendingToken
         ) {
-            // Doğrulama kodu başarıyla kullanıcının telefonuna gönderildi.
+
             _verificationCodeSent.value = verificationId
         }
     }
     fun signInWithPhoneAuthCredential(verificationCode: String) {
-        // Telefon doğrulama referansını al
+
         val credential = PhoneAuthProvider.getCredential(_verificationCodeSent.value!!, verificationCode)
 
-        // FirebaseAuth ile giriş yap
+
         auth.signInWithCredential(credential)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    // Kullanıcı başarıyla giriş yaptı
+
                     _isVerificationSuccessful.value = true
                 } else {
-                    // Giriş başarısız, hata işlemleri burada yapılabilir
+
                     _isVerificationSuccessful.value = false
                 }
             }

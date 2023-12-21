@@ -31,14 +31,14 @@ class MessageAdapter(var messages: List<Message>) : RecyclerView.Adapter<Message
             holder.recMessageTextView.text = message.text
             holder.messageTextView.visibility = View.GONE
             holder.recMessageTextView.visibility = View.VISIBLE
-            // görünür yap
+
         } else {
             Log.d("MessageAdapter", "onBindViewHolder: MessageText=${message.text}")
-            // Mesajı alıcı kişi ise
+
             holder.messageTextView.text = message.text
             holder.recMessageTextView.visibility = View.GONE
             holder.messageTextView.visibility = View.VISIBLE
-            // görünür yap
+
         }
     }
     override fun getItemCount(): Int {

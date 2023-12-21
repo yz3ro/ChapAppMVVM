@@ -12,9 +12,9 @@ class ContactsRepository(var context: Context) {
     private val db = FirebaseFirestore.getInstance()
     private val currentUser = auth.currentUser
     fun addContact(userName: String, number: String) {
-        // Kullanıcının oturumu açık mı kontrol et
+
         if (currentUser != null) {
-            // Kullanıcının telefon numarasını kullanarak UID'yi al
+
             db.collection("kullanicilar")
                 .whereEqualTo("numara", number)
                 .get()
@@ -31,7 +31,6 @@ class ContactsRepository(var context: Context) {
                                     "uid" to contactUid
                                 )
 
-                                // Firestore'a kişiyi ekle
                                 db.collection("kullanicilar")
                                     .document(currentUser.uid)
                                     .collection("kisiler")

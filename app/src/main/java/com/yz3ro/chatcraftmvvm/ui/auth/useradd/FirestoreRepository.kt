@@ -18,10 +18,10 @@ class FirestoreRepository {
             .document(uid)
             .set(users)
             .addOnSuccessListener {
-                // Başarılı bir şekilde eklendi
+
             }
             .addOnFailureListener { e ->
-                // Hata durumunda burada işlem yapabilirsiniz
+
                 Log.e("Firestore Hata", "Veri yazma hatası: ${e.message}")
             }
     }

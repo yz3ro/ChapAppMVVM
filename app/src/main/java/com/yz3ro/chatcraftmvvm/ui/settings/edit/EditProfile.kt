@@ -30,45 +30,40 @@ class EditProfile : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // EditRepository ve EditViewModel'ı başlat
         val repository = EditRepository()
         viewModel = ViewModelProvider(this, EditFactory(repository)).get(EditViewModel::class.java)
 
-        // EditViewModel'dan gelen kullanıcı verilerini gözlemle
+
         viewModel.getUserProfile().observe(viewLifecycleOwner) { users ->
             users?.let {
                 if (!it.ProfilePhotoURL.isNullOrEmpty()) {
-                    // Firestore'dan çekilen belgede profilFotoURL varsa,
-                    // bu URL'yi kullanarak ImageView içine fotoğrafı yükle
+
                     Glide.with(requireContext())
                         .load(it.ProfilePhotoURL)
                         .into(binding.EditProfilePp)
                 } else {
-                    // Firestore'dan çekilen belgede profilFotoURL yoksa,
-                    // varsayılan bir fotoğrafı yükleyebilir veya başka bir işlem yapabilirsiniz
+
                 }
             }
         }
 
-        // "Onayla" butonuna tıklama işlemleri
+
         binding.btnOnayla.setOnClickListener {
             val newName = binding.editTextKisiAdi.text.toString()
             viewModel.updateUserDisplayName(newName)
         }
 
-        // Profil fotoğrafı üzerine tıklama işlemleri
+
         binding.EditProfilePp.setOnClickListener {
             launchGallery()
         }
     }
 
-    // Galeriye gitmek için kullanılan fonksiyon
     private fun launchGallery() {
         val galleryIntent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
         startActivityForResult(galleryIntent, PICK_IMAGE_REQUEST)
     }
 
-    // Galeriden seçilen resmin sonucunu işleme
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
@@ -77,10 +72,9 @@ class EditProfile : Fragment() {
                 return
             }
 
-            // Seçilen resmin Uri'sini al
+
             val ProfilePhotoURL: Uri = data.data!!
 
-            // EditViewModel'da tanımlanan fonksiyonu kullanarak resmi yükle
             viewModel.uploadImage(ProfilePhotoURL)
         }
     }
